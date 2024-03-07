@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tandon @The Yard</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <header>
+        <nav>
+            <img src="images/@TY.png" class="logo">
+            <ul>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">SERVICES</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+                
+                <div class="content">
+                    <img id="background_image" src="images/LED_WALL.jpg" alt="parallax" />
+                    <h1 id="title"> An emerging <br> media playground.</h1>
+                </div>
+                <section class="about">
+                    <div class="image__gallery">
+                        <div class="image__card" id="image__card-1">
+                            <img src="images/tandon-navy-yard-building_images_052-copy.jpg" alt="grid" />
+                        </div>
+                        <div class="image__card" id="image__card-2">
+                            <img src="images/tandon-navy-yard-building_images_069-copy.jpg" alt="grid" />
+                        </div>
+                        <div class="image__card" id="image__card-3">
+                            <img src="images/tandon-navy-yard-building_images_070-copy.jpg" alt="grid" />
+                        </div>
+                    </div>
+                    <div class="details">
+                        NYU Tandon @ The Yard leverages the Emerging Media expertise of NYU Tandon School of Engineering with industry and media partners across the country to create a new media hub and must-visit facility within the Brooklyn Navy Yard. Our goals are to advance integrative research in AR/VR/XR, virtual production, and other topics relevant to experiential computing; provide our industry partners with first-hand contact with both NYU faculty, students, and media organizations in New York City.
+                    </div>
+                    <div class="footer__btn">
+                        <button class="learn__more">Learn more</button>
+                    </div>
+                </section>
+            </div>
+        <script>
+            var title = document.getElementById("title");
+            var bk_image = document.getElementById("background_image");
+
+            var image_card_1 = document.getElementbyId("image__card-1");
+            var image_card_2 = document.getElementbyId("image__card-2");
+            var image_card_3 = document.getElementbyId("image__card-3");
+
+            document.addEventListener("scroll", (event) => {
+                var positionY = window.scrollY;
+
+                title.style.fonsize = `${100 + positionY * 0.5}px`;
+
+                bk_image.style.top = `-${positionY * .5}px`
+
+                image_card_1.style.transform = `translateY(${
+                    positionY * -0.5 +400
+                }px)`;
+
+                image_card_2.style.transform = `translateY(${positionY * 0.1 + -50}px)`;
+
+                image_card3.style.transform = `translateY(${
+                    positionY * -0.1 + 100
+                }px)`;
+
+                var newOpacity = positionY * 0.001; 
+                if (_newOpacity >= 0 && _newOpacity <= 1) {
+                    image_card_1.style.opacity = _newOpacity;
+                    image_card_2.style.opacity = _newOpacity;
+                    image_card_3.style.opacity = _newOpacity;
+                }
+
+            });
+        </script>
+    </body>
+</html>
